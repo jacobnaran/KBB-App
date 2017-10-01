@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Textbook Info Entry</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Info Entry</ion-title>
     <!--<ion-buttons end>
       <button ion-button (click)="dismiss()">Cancel</button>
     </ion-buttons>-->
@@ -23,7 +23,7 @@
 
   <form [formGroup]="bookForm">
 
-    <h2>Textbook Information</h2>
+    <h2>Book Information</h2>
 
     <ion-item>
       <ion-label fixed>Asking Price</ion-label>
@@ -58,7 +58,7 @@
     <!--</ion-item>-->
 
     <ion-item>
-      <ion-label floating>Course Title (e.g. "Introduction to Psychology")</ion-label>
+      <ion-label floating>Course Title</ion-label>
       <ion-input formControlName="courseName" type="text" [(ngModel)]="book.courseName"></ion-input>
     </ion-item>
 

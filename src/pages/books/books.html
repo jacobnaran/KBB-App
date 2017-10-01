@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Buy and Sell Textbooks</ion-title>
+    <ion-title>Buy & Sell Books</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,9 +19,11 @@
 <ion-content padding>
   <button ion-button block color="secondary" (click)="navigateToListBookPage()">Sell a Book</button>
 
+  <h4>For Sale</h4>
+
   <ion-list>
     <ion-item *ngFor="let book of booksPageRef$ | async" (click)="navigateToViewBookPage(book)">
-      <h2>{{book.bookTitle}}</h2>
+      <h3>{{book.bookTitle}}</h3>
       <p>Course Code: {{book.courseCode}}</p>
       <p>Course Title: {{book.courseName}}</p>
       <span item-right> {{book.price}} </span>

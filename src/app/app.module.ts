@@ -7,11 +7,15 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { BooksPage } from '../pages/books/books';
 import { TutoringPage } from '../pages/tutoring/tutoring';
+import { EventsPage } from '../pages/events/events';
+import { LostFoundPage } from '../pages/lost-found/lost-found';
+import { LinksPage } from '../pages/links/links';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import { AddShoppingPage } from '../pages/add-shopping/add-shopping';
 import { ListBookPage } from '../pages/list-book/list-book';
 import { TestFormPage } from '../pages/test-form/test-form';
 import { ViewBookPage } from '../pages/view-book/view-book';
+
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,7 +34,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AddShoppingPage,
     ListBookPage,
     TestFormPage,
-    ViewBookPage
+    ViewBookPage,
+    EventsPage,
+    LostFoundPage,
+    LinksPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AddShoppingPage,
     ListBookPage,
     TestFormPage,
-    ViewBookPage
+    ViewBookPage,
+    EventsPage,
+    LostFoundPage,
+    LinksPage
   ],
   providers: [
     StatusBar,

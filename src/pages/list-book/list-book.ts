@@ -32,12 +32,12 @@ export class ListBookPage {
     this.submitAttempt = false;
 
     this.bookForm = formBuilder.group({
-        bookTitle: ['', Validators.compose([Validators.maxLength(30), Validators.required])],
+        bookTitle: ['', Validators.compose([Validators.maxLength(100), Validators.required])],
         authors: [''],
         courseName: [''],
         courseCode: [''],
         price: ['$', Validators.compose([Validators.minLength(2), Validators.required])],
-        seller: ['', Validators.compose([Validators.maxLength(30), Validators.required])],
+        seller: ['', Validators.compose([Validators.maxLength(50), Validators.required])],
         sellerPhone: [''],
         sellerEmail: [''],
         notes: ['']

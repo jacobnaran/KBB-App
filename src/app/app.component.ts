@@ -10,6 +10,10 @@ import { TutoringPage } from '../pages/tutoring/tutoring';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import { TestFormPage } from '../pages/test-form/test-form';
 import { ViewBookPage } from '../pages/view-book/view-book';
+import { EventsPage } from '../pages/events/events';
+import { LostFoundPage } from '../pages/lost-found/lost-found';
+import { LinksPage } from '../pages/links/links';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -27,8 +31,12 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Buy & Sell Textbooks', component: BooksPage },
+      { title: 'Buy & Sell Books', component: BooksPage },
       { title: 'Tutoring Services', component: TutoringPage },
+      { title: 'Events', component: EventsPage },
+      { title: 'Lost & Found', component: LostFoundPage },
+      { title: 'Useful Links', component: LinksPage }
+
       /*{ title: 'Shopping List', component: ShoppingListPage },
       { title: 'Test Form', component: TestFormPage }*/
     ];
