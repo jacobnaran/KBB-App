@@ -1,0 +1,35 @@
+<!--
+  Generated template for the ViewBookPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> Textbook Information </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h3>Textbook Information</h3>
+  <p>
+    Book Title: {{book.bookTitle}}<br>
+    Price: {{book.price}}<br>
+    Author(s): {{book.authors}}<br>
+    Course Title: {{book.courseName}}<br>
+    Course Code: {{book.courseCode}}
+  </p>
+
+  <h3>Seller Information</h3>
+  <p>
+    Seller: {{book.seller}}<br>
+    Phone: {{book.sellerPhone}}<br>
+    Email: {{book.sellerEmail}}<br>
+    <span id="notes">Notes: {{book.notes}}</span>
+  </p>
+  <button ion-button block color="danger" (click)="removeListing()">Remove Listing</button>
+</ion-content>

@@ -1,0 +1,95 @@
+<!--
+  Generated template for the ListBookPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Textbook Info Entry</ion-title>
+    <!--<ion-buttons end>
+      <button ion-button (click)="dismiss()">Cancel</button>
+    </ion-buttons>-->
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!--<p color="danger">* = Required Field</p>-->
+
+  <form [formGroup]="bookForm">
+
+    <h2>Textbook Information</h2>
+
+    <ion-item>
+      <ion-label fixed>Asking Price</ion-label>
+      <ion-input formControlName="price" type="text" [(ngModel)]="book.price"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="submitAttempt && !bookForm.controls.price.valid">
+      <p class="warning">Please enter an asking price.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Book Title (required)</ion-label>
+      <ion-input formControlName="bookTitle" type="text" [(ngModel)]="book.bookTitle"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="submitAttempt && !bookForm.controls.bookTitle.valid">
+        <p class="warning">Please enter a book title.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Author(s)</ion-label>
+      <ion-input formControlName="authors" type="text" [(ngModel)]="book.authors"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Course Code (e.g. "MATH 110")</ion-label>
+      <ion-input formControlName="courseCode" type="text" [(ngModel)]="book.courseCode"></ion-input>
+    </ion-item>
+
+    <!--<ion-item *ngIf="submitAttempt && !bookForm.controls.courseCode.valid">-->
+      <!--<p class="warning">Please enter a course code.</p>-->
+    <!--</ion-item>-->
+
+    <ion-item>
+      <ion-label floating>Course Title (e.g. "Introduction to Psychology")</ion-label>
+      <ion-input formControlName="courseName" type="text" [(ngModel)]="book.courseName"></ion-input>
+    </ion-item>
+
+    <h2>Seller Information</h2>
+
+    <ion-item>
+      <ion-label floating>Your Name</ion-label>
+      <ion-input formControlName="seller" type="text" [(ngModel)]="book.seller"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="submitAttempt && !bookForm.controls.seller.valid">
+      <p class="warning">Please enter your name.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Contact Phone (optional)</ion-label>
+      <ion-input formControlName="sellerPhone" type="text" [(ngModel)]="book.sellerPhone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Contact Email (optional)</ion-label>
+      <ion-input formControlName="sellerEmail" type="text" [(ngModel)]="book.sellerEmail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Notes (optional)</ion-label>
+      <ion-textarea formControlName="notes" type="text" [(ngModel)]="book.notes"></ion-textarea>
+    </ion-item>
+
+  </form>
+
+  <!--block makes it take up 100% of width-->
+  <button ion-button block color="secondary" (click)="addBook(book)">List Your Book</button>
+</ion-content>
