@@ -1,5 +1,5 @@
 <!--
-  Generated template for the EventsPage page.
+  Generated template for the BooksPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -17,5 +17,16 @@
 
 
 <ion-content padding>
+  <button ion-button block color="secondary" (click)="navigateToListEventPage()">List an Event</button>
+
+  <h4>Upcoming Events</h4>
+
+  <ion-list>
+    <ion-item *ngFor="let ev of eventsPageRef$ | async" (click)="navigateToViewEventPage(ev)">
+      <h3>{{ev.title}}</h3>
+      <p> {{ev.datetime}} </p>
+      <!--<span item-right> {{book.price}} </span>-->
+    </ion-item>
+  </ion-list>
 
 </ion-content>

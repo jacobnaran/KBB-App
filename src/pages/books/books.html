@@ -22,7 +22,7 @@
   <h4>For Sale</h4>
 
   <ion-list>
-    <ion-item *ngFor="let book of booksPageRef$ | async" (click)="navigateToViewBookPage(book)">
+    <ion-item *ngFor="let book of booksPageRef$ | async" (click)="showViewBookModal(book)">
       <h3>{{book.bookTitle}}</h3>
       <p>Course Code: {{book.courseCode}}</p>
       <p>Course Title: {{book.courseName}}</p>

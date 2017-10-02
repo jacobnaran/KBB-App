@@ -14,7 +14,7 @@ import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import { AddShoppingPage } from '../pages/add-shopping/add-shopping';
 import { ListBookPage } from '../pages/list-book/list-book';
 import { TestFormPage } from '../pages/test-form/test-form';
-import { ViewBookPage } from '../pages/view-book/view-book';
+import { ViewBookModal } from '../components/view-book/view-book';
 
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 
@@ -34,7 +34,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AddShoppingPage,
     ListBookPage,
     TestFormPage,
-    ViewBookPage,
+    ViewBookModal,
     EventsPage,
     LostFoundPage,
     LinksPage
@@ -58,10 +58,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AddShoppingPage,
     ListBookPage,
     TestFormPage,
-    ViewBookPage,
     EventsPage,
     LostFoundPage,
-    LinksPage
+    LinksPage,
+    ViewBookModal
   ],
   providers: [
     StatusBar,

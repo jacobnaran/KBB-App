@@ -4,12 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { BooksPage } from '../pages/books/books';
 import { TutoringPage } from '../pages/tutoring/tutoring';
-import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
-import { TestFormPage } from '../pages/test-form/test-form';
-import { ViewBookPage } from '../pages/view-book/view-book';
 import { EventsPage } from '../pages/events/events';
 import { LostFoundPage } from '../pages/lost-found/lost-found';
 import { LinksPage } from '../pages/links/links';

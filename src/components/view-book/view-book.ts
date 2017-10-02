@@ -1,30 +1,24 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ViewController, NavController, NavParams } from 'ionic-angular';
 
 import { Book } from '../../models/book/book.interface';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 import { FirebaseListObservable } from 'angularfire2/database';
-/**
- * Generated class for the ViewBookPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-//@IonicPage()
 @Component({
   selector: 'page-view-book',
   templateUrl: 'view-book.html'
 })
-export class ViewBookPage {
+
+export class ViewBookModal {
 
   book = {} as Book
 
   // reference to database
   viewBookRef$: FirebaseListObservable<Book[]>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, private database: AngularFireDatabase) {
     this.book = this.navParams.get('book');
     this.viewBookRef$ = this.database.list('books-list');
   }
@@ -37,5 +31,9 @@ export class ViewBookPage {
   /*ionViewDidLoad() {
     console.log('ionViewDidLoad ViewBookPage');
   }*/
+
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
 
 }

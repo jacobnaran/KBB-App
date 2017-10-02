@@ -1,31 +1,24 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModalController, ViewController, NavController, NavParams } from 'ionic-angular';
 
-import { ViewBookPage } from '../view-book/view-book';
+import { ViewBookModal } from '../../components/view-book/view-book';
 import { ListBookPage } from '../list-book/list-book';
 import { Book } from '../../models/book/book.interface';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 import { FirebaseListObservable } from 'angularfire2/database';
 
-/**
- * Generated class for the BooksPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-//@IonicPage()
 @Component({
   selector: 'page-books',
   templateUrl: 'books.html',
 })
+
 export class BooksPage {
 
   // reference to database
   booksPageRef$: FirebaseListObservable<Book[]>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private database: AngularFireDatabase) {
     this.booksPageRef$ = this.database.list('books-list', {query: {orderByChild: 'timestamp'}});
   }
 
@@ -33,9 +26,11 @@ export class BooksPage {
     this.navCtrl.push(ListBookPage);
   }
 
-  navigateToViewBookPage(book: Book) {
+  showViewBookModal(book: Book) {
     // paramName: param
-    this.navCtrl.push(ViewBookPage, {book: book});
+//    this.navCtrl.push(ViewBookPage, {book: book});
+    let modal = this.modalCtrl.create(ViewBookModal, {book: book});
+    modal.present();
   }
 
   /*ionViewDidLoad() {

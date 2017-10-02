@@ -1,25 +1,38 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the EventsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//import { ViewEventPage } from '../view-event/view-event';
+//import { ListEventPage } from '../list-event/list-event';
+import { KEvent } from '../../models/kevent/kevent.interface';
 
-@IonicPage()
+import { AngularFireDatabase } from 'angularfire2/database';
+import { FirebaseListObservable } from 'angularfire2/database';
+
 @Component({
   selector: 'page-events',
   templateUrl: 'events.html',
 })
+
 export class EventsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // reference to database
+  eventsPageRef$: FirebaseListObservable<KEvent[]>
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase) {
+    this.eventsPageRef$ = this.database.list('events-list', {query: {orderByChild: 'datetime'}});
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EventsPage');
+  navigateToListEventPage() {
+    //this.navCtrl.push(ListEventPage);
   }
+
+  navigateToViewEventPage(ev: KEvent) {
+    // paramName: param
+    //this.navCtrl.push(ViewBookPage, {ev: ev});
+  }
+
+  /*ionViewDidLoad() {
+    console.log('ionViewDidLoad BooksPage');
+  }*/
 
 }
