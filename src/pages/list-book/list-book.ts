@@ -20,7 +20,11 @@ export class ListBookPage {
   submitAttempt: boolean
   bookForm: FormGroup
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, private database: AngularFireDatabase) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public formBuilder: FormBuilder,
+              private database: AngularFireDatabase) {
+
     this.listBookRef$ = this.database.list('books-list');
     this.submitAttempt = false;
 
