@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>listEvent</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Event Entry</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,42 @@
 
 <ion-content padding>
 
+  <!--<p color="danger">* = Required Field</p>-->
+
+  <form [formGroup]="eventForm">
+
+    <!--<h2>Event Information</h2>-->
+
+    <ion-item>
+      <ion-label floating>Event Title</ion-label>
+      <ion-input formControlName="title" type="text" [(ngModel)]="ev.title"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="submitAttempt && !eventForm.controls.title.valid">
+      <p class="warning">Please enter an event title.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Location</ion-label>
+      <ion-input formControlName="location" type="text" [(ngModel)]="ev.location"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-textarea formControlName="description" type="text" [(ngModel)]="ev.description"></ion-textarea>
+    </ion-item>
+
+    <ion-item *ngIf="submitAttempt && !eventForm.controls.description.valid">
+      <p class="warning">Please describe the event.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Who to Contact</ion-label>
+      <ion-input formControlName="contact" type="text" [(ngModel)]="ev.contact"></ion-input>
+    </ion-item>
+
+  </form>
+
+  <!--block makes it take up 100% of width-->
+  <button ion-button block color="secondary" (click)="addEvent()">List Your Event</button>
 </ion-content>

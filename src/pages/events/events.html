@@ -22,7 +22,7 @@
   <h4>Upcoming Events</h4>
 
   <ion-list>
-    <ion-item *ngFor="let ev of eventsPageRef$ | async" (click)="navigateToViewEventPage(ev)">
+    <ion-item *ngFor="let ev of eventsPageRef$ | async" (click)="showViewEventModal(ev)">
       <h3>{{ev.title}}</h3>
       <p> {{ev.datetime}} </p>
       <!--<span item-right> {{book.price}} </span>-->

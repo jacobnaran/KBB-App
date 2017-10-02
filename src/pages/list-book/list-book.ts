@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { Book } from '../../models/book/book.interface';
 
@@ -7,14 +7,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-/**
- * Generated class for the ListBookPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-//@IonicPage()
 @Component({
   selector: 'page-list-book',
   templateUrl: 'list-book.html',
@@ -71,7 +64,6 @@ export class ListBookPage {
       // Navigate the user back to the Books Page
       this.navCtrl.pop();
     }
-
   }
 
   /*ionViewDidLoad() {

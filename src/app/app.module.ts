@@ -4,17 +4,20 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+//import { ListPage } from '../pages/list/list';
 import { BooksPage } from '../pages/books/books';
 import { TutoringPage } from '../pages/tutoring/tutoring';
 import { EventsPage } from '../pages/events/events';
 import { LostFoundPage } from '../pages/lost-found/lost-found';
 import { LinksPage } from '../pages/links/links';
-import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
-import { AddShoppingPage } from '../pages/add-shopping/add-shopping';
+//import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
+//import { AddShoppingPage } from '../pages/add-shopping/add-shopping';
 import { ListBookPage } from '../pages/list-book/list-book';
-import { TestFormPage } from '../pages/test-form/test-form';
+import { ListEventPage } from '../pages/list-event/list-event';
+
+//import { TestFormPage } from '../pages/test-form/test-form';
 import { ViewBookModal } from '../components/view-book/view-book';
+import { ViewEventComponent } from '../components/view-event/view-event';
 
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 
@@ -27,14 +30,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     BooksPage,
     TutoringPage,
-    ShoppingListPage,
-    AddShoppingPage,
     ListBookPage,
-    TestFormPage,
+    ListEventPage,
     ViewBookModal,
+    ViewEventComponent,
     EventsPage,
     LostFoundPage,
     LinksPage
@@ -51,13 +52,11 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     BooksPage,
     TutoringPage,
-    ShoppingListPage,
-    AddShoppingPage,
     ListBookPage,
-    TestFormPage,
+    ListEventPage,
+    ViewEventComponent,
     EventsPage,
     LostFoundPage,
     LinksPage,

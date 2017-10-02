@@ -1,39 +1,38 @@
 import { Component } from '@angular/core';
 import { ViewController, NavController, NavParams } from 'ionic-angular';
 
-import { Book } from '../../models/book/book.interface';
+import { KEvent } from '../../models/kevent/kevent.interface';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 import { FirebaseListObservable } from 'angularfire2/database';
 
+
 @Component({
-  selector: 'page-view-book',
-  templateUrl: 'view-book.html'
+  selector: 'view-event',
+  templateUrl: 'view-event.html'
 })
+export class ViewEventComponent {
 
-export class ViewBookModal {
-
-  book = {} as Book
+  ev = {} as KEvent
 
   // reference to database
-  viewBookRef$: FirebaseListObservable<Book[]>
+    viewEventRef$: FirebaseListObservable<KEvent[]>
 
   constructor(public navCtrl: NavController,
               public viewCtrl: ViewController,
               public navParams: NavParams,
               private database: AngularFireDatabase) {
 
-    this.book = this.navParams.get('book');
-    this.viewBookRef$ = this.database.list('books-list');
+    this.ev = this.navParams.get('ev');
+    this.viewEventRef$ = this.database.list('events-list');
   }
 
   removeListing() {
-    this.viewBookRef$.remove(this.book.$key);
+    this.viewEventRef$.remove(this.ev.$key);
     this.navCtrl.pop();
   }
 
   dismiss() {
     this.viewCtrl.dismiss();
   }
-
 }

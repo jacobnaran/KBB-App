@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, ViewController, NavController, NavParams } from 'ionic-angular';
+import { ModalController, NavController, NavParams } from 'ionic-angular';
 
 import { ViewBookModal } from '../../components/view-book/view-book';
 import { ListBookPage } from '../list-book/list-book';
